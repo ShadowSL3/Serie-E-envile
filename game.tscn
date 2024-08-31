@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd0jr5my5ewd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed6ws"]
+bg_color = Color(0, 0.0273691, 0.0631858, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 597.0
+offset_bottom = 736.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ed6ws")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 1.0
+offset_right = 597.0
+offset_bottom = 45.0
