@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd0jr5my5ewd"]
+[gd_scene load_steps=8 format=3 uid="uid://bd0jr5my5ewd"]
+
+[ext_resource type="Script" path="res://option_button.gd" id="1_udkre"]
+[ext_resource type="AudioStream" uid="uid://dn36owx30xq74" path="res://Sounds/Inno/Juventus/juve_inno.mp3" id="2_oljto"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed6ws"]
 bg_color = Color(0, 0.0273691, 0.0631858, 1)
@@ -28,6 +31,22 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b6el"]
+bg_color = Color(0.00276847, 0.0712497, 0.12648, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 3
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 7
+corner_detail = 12
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o16ph"]
+stream_count = 12
+stream_0 = ExtResource("2_oljto")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
@@ -45,3 +64,24 @@ offset_bottom = 45.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_tnbq4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cqm3o")
 text = "="
+
+[node name="OptionButton" type="OptionButton" parent="Panel/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.942
+anchor_right = -5.942
+offset_left = 0.0120239
+offset_right = 83.012
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b6el")
+item_count = 2
+popup/item_0/text = "Settings"
+popup/item_0/id = 1
+popup/item_1/text = "Music"
+popup/item_1/id = 2
+script = ExtResource("1_udkre")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamPlaylist_o16ph")
+
+[connection signal="item_selected" from="Panel/Button/OptionButton" to="Panel/Button/OptionButton" method="_on_selected_item"]

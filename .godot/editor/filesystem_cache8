@@ -1,12 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725145040
-game.tscn::PackedScene::77916913684083951::1725144613::0::1::::<><>::
-icon.svg::CompressedTexture2D::2908621256058438638::1725141289::1725141317::1::::<><>::
-::res://license/::1725141411
-::res://license/English/::1725141370
-::res://license/France/::1725141389
-::res://license/italian/::1725141423
-::res://license/italian/Serie A/::1725142668
-::res://license/italian/Serie A/Napoli/::1725142672
-icon.svg::CompressedTexture2D::6852895172128925432::1725142671::1725142672::1::::<><>::
-::res://license/Spagna/::1725141411
+::res://::1725785380
+game.tscn::PackedScene::77916913684083951::1725784616::0::1::::<><>::res://option_button.gd<>uid://dn36owx30xq74::::res://Sounds/Inno/Juventus/juve_inno.mp3
+icon.svg::CompressedTexture2D::2908621256058438638::1725141290::1725645218::1::::<><>::
+option_button.gd::GDScript::-1::1725784616::0::1::::<>OptionButton<>::
+::res://addons/::1725785380
+::res://license/::1725645185
+::res://license/English/::1725141372
+::res://license/France/::1725141390
+::res://license/italian/::1725645185
+::res://license/italian/Serie A/::1725645185
+::res://license/italian/Serie A/Napoli/::1725645218
+icon.svg::CompressedTexture2D::6852895172128925432::1725142672::1725645218::1::::<><>::
+::res://license/Spagna/::1725141412
+::res://Sounds/::1725714146
+::res://Sounds/Inno/::1725714285
+::res://Sounds/Inno/Genoa/::1725714225
+::res://Sounds/Inno/Inter/::1725714172
+::res://Sounds/Inno/Juventus/::1725782482
+juve_inno.mp3::AudioStreamMP3::8131428015728555429::1725780541::1725785381::1::::<><>::
+::res://Sounds/Inno/Lazio/::1725714199
+::res://Sounds/Inno/Milan/::1725714232
+::res://Sounds/Inno/Napoli/::1725714154
+::res://Sounds/Inno/Roma/::1725714285
+::res://Sounds/Inno/Serie A/::1725714278
+::res://Sounds/Inno/TorinoFc/::1725714189

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd0jr5my5ewd"]
+
+[ext_resource type="Script" path="res://option_button.gd" id="1_udkre"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed6ws"]
+bg_color = Color(0, 0.0273691, 0.0631858, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnbq4"]
+bg_color = Color(3.00817e-09, 0.0389335, 0.14749, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.0392157, 0.14902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqm3o"]
+bg_color = Color(0, 0.0894353, 0.149272, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.027451, 0.0627451, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b6el"]
+bg_color = Color(0.00276847, 0.0712497, 0.12648, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 2
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 597.0
+offset_bottom = 736.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ed6ws")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 1.0
+offset_right = 597.0
+offset_bottom = 45.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_tnbq4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cqm3o")
+text = "="
+
+[node name="OptionButton" type="OptionButton" parent="Panel/Button"]
+layout_mode = 0
+offset_right = 83.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b6el")
+item_count = 2
+popup/item_0/text = "Settings"
+popup/item_0/id = 1
+popup/item_1/text = "Music"
+popup/item_1/id = 2
+script = ExtResource("1_udkre")
+
+[connection signal="item_selected" from="Panel/Button/OptionButton" to="Panel/Button/OptionButton" method="_on_selected_item"]
