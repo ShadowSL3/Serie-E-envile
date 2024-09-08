@@ -44,6 +44,7 @@ corner_radius_bottom_left = 7
 corner_detail = 12
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o16ph"]
+loop = false
 stream_count = 12
 stream_0 = ExtResource("2_oljto")
 
