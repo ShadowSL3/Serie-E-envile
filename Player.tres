@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Player" load_steps=2 format=3 uid="uid://c2v153iaah3e2"]
+
+[ext_resource type="Script" path="res://player_Stats.gd" id="1_6b1qj"]
+
+[resource]
+script = ExtResource("1_6b1qj")
+lsd = 0
+powershoot = 0
+value_player = 0
+Player_Rarity = ""
+injury = 0

@@ -1,7 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd0jr5my5ewd"]
+[gd_scene load_steps=16 format=3 uid="uid://bd0jr5my5ewd"]
 
 [ext_resource type="Script" path="res://option_button.gd" id="1_udkre"]
+[ext_resource type="Script" path="res://play.gd" id="2_hxx02"]
 [ext_resource type="AudioStream" uid="uid://dn36owx30xq74" path="res://Sounds/Inno/Juventus/juve_inno.mp3" id="2_oljto"]
+[ext_resource type="AudioStream" uid="uid://k30furgwjhik" path="res://Sounds/Inno/Inter/inter.mp3" id="3_evlfm"]
+[ext_resource type="AudioStream" uid="uid://buu5kl1beokut" path="res://Sounds/Inno/Genoa/genoa.mp3" id="4_b66xw"]
+[ext_resource type="AudioStream" uid="uid://cjtr6017lp3yb" path="res://Sounds/Inno/TorinoFc/torinofc.mp3" id="5_0gs7c"]
+[ext_resource type="PackedScene" uid="uid://vvggcqua3t3w" path="res://stats_player.tscn" id="7_ahfrq"]
+[ext_resource type="Script" path="res://player_Stats.gd" id="7_kyj8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed6ws"]
 bg_color = Color(0, 0.0273691, 0.0631858, 1)
@@ -43,10 +49,39 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 7
 corner_detail = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_228oc"]
+bg_color = Color(7.82125e-08, 0.115439, 0.192108, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 9
+corner_detail = 12
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_o16ph"]
 loop = false
 stream_count = 12
 stream_0 = ExtResource("2_oljto")
+stream_1 = ExtResource("3_evlfm")
+stream_2 = ExtResource("4_b66xw")
+stream_3 = ExtResource("5_0gs7c")
+
+[sub_resource type="Resource" id="Resource_g5fko"]
+script = ExtResource("7_kyj8x")
+lsd = 12
+powershoot = 30
+value_player = 45
+Player_Rarity = "Rare"
+active_injury = false
+injury = 0
+level_injury = 0.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -67,6 +102,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_cqm3o")
 text = "="
 
 [node name="OptionButton" type="OptionButton" parent="Panel/Button"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -5.942
@@ -82,7 +118,20 @@ popup/item_1/text = "Music"
 popup/item_1/id = 2
 script = ExtResource("1_udkre")
 
+[node name="Play" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 297.67
+offset_right = 394.0
+offset_bottom = 348.67
+theme_override_styles/normal = SubResource("StyleBoxFlat_228oc")
+text = "PLAY"
+script = ExtResource("2_hxx02")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamPlaylist_o16ph")
+
+[node name="StatsPlayer" parent="." instance=ExtResource("7_ahfrq")]
+player = SubResource("Resource_g5fko")
 
 [connection signal="item_selected" from="Panel/Button/OptionButton" to="Panel/Button/OptionButton" method="_on_selected_item"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://vvggcqua3t3w"]
+
+[ext_resource type="Script" path="res://player_stats_Node.gd" id="1_8ltwn"]
+[ext_resource type="Script" path="res://player_Stats.gd" id="2_k0jlk"]
+
+[sub_resource type="Resource" id="Resource_rxox4"]
+script = ExtResource("2_k0jlk")
+lsd = 30
+powershoot = 120
+value_player = 40
+Player_Rarity = "Bronze"
+
+[node name="StatsPlayer" type="Node"]
+script = ExtResource("1_8ltwn")
+player = SubResource("Resource_rxox4")
